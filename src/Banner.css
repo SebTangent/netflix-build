@@ -1,0 +1,56 @@
+.Banner{
+    position: relative;
+    height: 700px;
+    color: white;
+    object-fit: contain;
+}
+
+.banner_contents{
+    margin-left: 30px;
+    padding-top: 240px;
+    height: 190px;
+}
+.banner_title{
+    font-size: 3rem;
+    font-weight: 800; /*This is the thickness of the Font */
+    padding-bottom: 0.3rem; /*This spaces the bottom of the Title Text */
+}
+.banner_description{
+     width: 40rem;
+     line-height: 1.3;
+     padding-top: 1rem;
+     font-size: 0.75rem;
+     max-width: 330px;
+     height: 80px;
+
+}
+.banner--fade{ /*this basically adds the gradient fade at the bottom of the image */
+    height: 15.77rem;
+    background-image: linear-gradient(
+        180deg, 
+        transparent, 
+        rgba(37, 37, 37, 0.61), 
+        #111
+    );
+}
+
+.banner_button{
+     cursor: pointer; 
+     color: #fff;
+     outline: none; 
+     border: none;
+     font-weight: 725; 
+     border-radius: 0.2vw; /* Makes the button slightly curved */
+     padding-left: 2rem ; 
+     padding-right: 2rem;
+     margin-right: 1rem;  /* Makes the button spaced out */
+     padding-top: 0.5rem; 
+     padding-bottom: 0.5rem; 
+     background-color: rgba(51, 51, 51, 0.5); 
+}
+
+.banner_button:hover{ /*When you hover it will change the colors and then make it a differnet shade*/
+    color: #000;
+    background-color: #e6e6e6;
+    transition: all 0.2s;
+}
