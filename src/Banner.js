@@ -27,7 +27,7 @@ function Banner() {
   return (
     <header className ="Banner" style={{
         backgroundSize: "cover",
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`}}> ,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`}}> 
          
  
     <div className = "banner_contents">
