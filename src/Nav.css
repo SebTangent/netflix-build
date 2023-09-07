@@ -1,3 +1,31 @@
+*{
+    font-family: Arial, sans-serif; 
+}
+/* Initial style for .dropdown-menu */
+.dropdown-menu {
+    cursor: pointer;
+    display: none; /* Initially hide the dropdown */
+    padding-top: 25px;
+    padding-left: 25px;
+    font-size: 12px; /* Adjust the font size for "Kids" */
+    font-weight: 525;
+    color: white;
+    padding-left: 85px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Style for .dropdown-menu when it should be displayed */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        display: block; /* Display the dropdown on smaller screens */
+    }
+}
+
+.dropdown-content a {
+    display: none;
+}
+
 .nav{
     position: fixed;
     top: 0;
@@ -13,7 +41,6 @@
 }
 
 
-
 .nav_background{
     background-color: #111;
 }
@@ -25,22 +52,80 @@
 
 .nav__logo{
     position:fixed;
-    top: 10px;
+    top: 15px;
     left: 0;
     cursor: pointer;
     width: 100px;
     object-fit: contain;
-    padding-left: 20px;
+    padding-left: 50px;
 
 }
-
 
 .user_logo{
     position: fixed;
-    top: 10px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
+    top: 15px;
+    right: 72.5px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
-
+    border-radius: 4px;
 }
+.nav__right {
+    display: flex;
+    align-items: center; /* Vertically center the icons within the container */
+    justify-content: flex-start; /* Align items to the left */
+    padding-top: 22px;
+    margin-right: 110px; /* Adjust the negative margin as needed */
+    margin-left: auto
+
+  }
+  .nav__search{
+    font-size: 18px; /* Adjust the icon size as needed */
+    color: white; /* Icon color */
+    margin-right: 12px; /* Add spacing between icons */
+    cursor: pointer; /* Make icons clickable */
+    padding-bottom:8.5px;
+  }
+  .nav__notification {
+    font-size: 18px; /* Adjust the icon size as needed */
+    color: white; /* Icon color */
+    margin-right: 10px; /* Add spacing between icons */
+    cursor: pointer; /* Make icons clickable */
+    padding-bottom: 5px;
+  }
+  
+  .nav__Kids {
+    font-size: 8px; /* Adjust the font size for "Kids" */
+    font-weight: 300;
+    color: white; /* Text color for "Kids" */
+    margin-right: 12px; /* Add spacing between "Kids" and other icons */
+    margin-left: 5px; /* Move "Kids" to the left */
+    cursor: pointer; /* Make "Kids" clickable */
+    padding-bottom: 5px;
+  }
+
+.nav__links {
+    display: flex;
+    margin-right: auto;
+    margin-left: 3px;
+    padding-top: 18px;
+    padding-left: 175px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav__links a {
+    font-size: 12px;
+    font-weight: lighter;
+    color:rgb(229,229,229);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav__links a:hover {
+    color: rgb(157, 157, 157); /* Change color on hover */
+  }
+
+ 

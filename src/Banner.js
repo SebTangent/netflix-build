@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import "./Banner.css";
 import axios from './axios';
 import requests from './requests'
+import 'font-awesome/css/font-awesome.min.css';
+
 
 function Banner() {
     const [movie, setMovie] = useState([]);
@@ -37,10 +39,18 @@ function Banner() {
         </h1>
 
             <div className = "banner_buttons">
-                <button className = "banner_button"> Play </button>
-                <button className = "banner_button"> Add to List </button>
+                <h1 className = "banner_description">{truncate( movie?.overview , 175)}</h1>
+
+                <button className = "play_button"> 
+
+                    <i className="fa fa-play"></i> Play
+
+                </button>
+                <button className = "banner_button"> 
+                <i className="fa fa-info-circle"></i> More Info
+                </button>
             
-            <h1 className = "banner_description">{truncate( movie?.overview , 150)}</h1>
+           
  
         </div>
     </div>
