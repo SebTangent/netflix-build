@@ -31,11 +31,12 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
     <div className="rowPosters">
          {movies.map((movie) => (
     <img
-      className={`row__poster ${isLargeRow && "row__posterLarge"}`} // Use backticks
+      className={`row__poster ${isLargeRow && "row__posterLarge"}`} // CHecks if its a deadlink and if it is then it wont render
       key={movie.id}
       src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
       alt={movie.name}
     />
+        
   ))}
 </div>
 

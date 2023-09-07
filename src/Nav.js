@@ -17,51 +17,7 @@ function Nav() {
     return () => window.removeEventListener('scroll', transitionNavBar);
   }, []);
 
-  useEffect(() => {
-    // Function to toggle the dropdown menu
-    function toggleDropdown() {
-      const dropdownContent = document.querySelector('.dropdown-content');
-      dropdownContent.classList.toggle('show-dropdown');
-    }
-
-    // Add an event listener for the dropdown button
-    const dropdownButton = document.querySelector('.dropdown-button');
-    if (dropdownButton) {
-      dropdownButton.addEventListener('click', toggleDropdown);
-    }
-
-    // Add a media query to check window width
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-
-    function handleMediaQueryChange(e) {
-      if (e.matches) {
-        // Display the dropdown button and hide the nav links
-        if (dropdownButton) {
-          dropdownButton.style.display = 'block';
-        }
-        const navLinks = document.querySelector('.nav__links');
-        if (navLinks) {
-          navLinks.style.display = 'none';
-        }
-      } else {
-        // Display the nav links and hide the dropdown button
-        const navLinks = document.querySelector('.nav__links');
-        if (navLinks) {
-          navLinks.style.display = 'flex';
-        }
-        if (dropdownButton) {
-          dropdownButton.style.display = 'none';
-        }
-      }
-    }
-
-    // Initial check of the media query on page load
-    handleMediaQueryChange(mediaQuery);
-
-    // Listen for changes to the media query
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-  }, []);
-
+  
 
 return <div className = "nav">
     <div className={`nav ${show && 'nav_background'}`}>

@@ -1,0 +1,116 @@
+* {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    width: 100%;
+  }
+  
+  .loginScreen {
+    position: relative;
+    height: 100%;
+    background: url("https://s3-us-west-2.amazonaws.com/techvibes/wp-content/uploads/2017/04/24135159/Netflix-Background.jpg") center no-repeat;
+    background-size: cover;
+  }
+  
+  .login_nav__logo {
+    position: fixed;
+    top: 15px;
+    left: 0;
+    cursor: pointer;
+    width: 150px;
+    object-fit: contain;
+    padding-top: 6px;
+    padding-left: 165px;
+  }
+  @media (max-width: 740px) {
+    .login_nav__logo {
+      padding-left: 50px; /* Adjust the left padding for smaller screens */
+    }
+  }
+
+
+  .login_sign_in {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 1000;
+    color: white;
+    background-color: rgb(215, 39, 48);
+    position: fixed;
+    right: 170px;
+    top: 30px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 0.4vw;
+  }
+
+  @media (max-width: 740px) {
+    .login_sign_in {
+      right: 20px; /* Adjust the left padding for smaller screens */
+    }
+  }
+  
+  
+  .loginScreenGradient {
+    width: 100%;
+    z-index: 1;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+  
+  .loginScreen-Body {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .loginScreen-Body > h1 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 1000;
+    margin-bottom: 20px;
+  }
+
+
+.loginScreen-Body > h2 {
+    color : #fff;
+    font-size: 24px;
+    margin-top: 16px;
+    padding-bottom: 25px;
+}
+  
+.loginScreen-Body > h3 {
+    color: #fff;
+    font-size:20px;
+    height: 30px;
+    padding-bottom: 20px;
+}
+
+.login-Input {
+    margin-top: auto;
+}
+
+.login-Input > form > input{
+    color:rgba(255,255,255);
+    border-radius: 15;
+    outline-width:0;
+    border:none;
+    
+    max-width: 600px;
+}
+
+
+.login-Input > login_getStarted{
+    padding : 12px 24px;
+    color: red;
+
+}
