@@ -1,83 +1,102 @@
+/* Base Styles */
 * {
     font-family: Arial, sans-serif;
 }
 
+/* Row and Text Styles */
 .row {
     color: white;
     margin-left: 20px;
     font-size: 16px;
 }
 
+/* Scroll Bar & Overflow */
 .rowPosters {
     display: flex;
     overflow-x: scroll;
     padding-top: 15px;
     padding-bottom: 30px;
     position: relative;
-
 }
 
 .rowPosters::-webkit-scrollbar {
     display: none;
 }
 
-.posterContainer {
-    position: relative;
-    display: inline-block;
-    overflow: visible;
-}
-
+/* Poster Styles */
 .row__poster,
 .row__posterLarge {
-    height: 125px;
     object-fit: contain;
     margin-right: 10px;
     width: auto;
     transition: transform 450ms, opacity 0.3s;
     border-radius: 5px;
+}
 
+.row__poster {
+    height: 125px;
 }
 
 .row__posterLarge {
     height: 200px;
 }
 
+/* Hover Effects for Posters */
 .row__poster:hover,
 .row__posterLarge:hover {
     transform: scale(1.12);
     border-radius: 9px;
     opacity: 1;
-
 }
 
-.MovieTitle {
-    padding-top: 20px;
-
-}
-
+/* Preview Modal */
 .previewModal--container {
-    font-size: 10px;
-    position: absolute;
-    top: auto;
-    left: auto;
+    /* To match the size of small posters */
     width: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-radius: 5px;
+    height: 85px;
+    text-align: center;
+    font-size: 10px;
 
-    opacity: 0;
-    transition: opacity 0.3s ease, height 0.3s ease;
-    z-index: 999999;
-    pointer-events: none; /* to disable any interaction with this element when it's hidden */
+    /* Layout & Spacing */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.posterContainer:hover .previewModal--container {
-    
-    opacity: 1;
-    pointer-events: all; /* to enable interaction with this element */
+.previewModal--containerLarge {
+    height: 100px;
+}
+.PlayButton{
+    font-size: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    border:none;
+   
 }
 
-.posterContainer:hover {
-    margin-bottom: 20px;
-    z-index: 5; /* This ensures that the hovered item is above the other items in terms of stacking order */
+.addtolist{
+    font-size: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    border:none;
+}
+
+.previewModal--buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Button Styles */
+.PlayButton, .addtolist {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

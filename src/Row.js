@@ -35,11 +35,13 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
             {hoveredMovie && hoveredMovie.id === movie.id && (
               <div className="previewModal--container">
                 <h3>{hoveredMovie.name || hoveredMovie.title}</h3> {/* Only the title */}
+              <div className= "previewModal--buttonContainer"> 
                 <button className = "PlayButton">
                     <i className="fa fa-play"></i>
                 </button>
-                <button>Add to List</button>
+                <button className = "addtolist"> +</button>
               </div>
+            </div>
             )}
           </div>
         ))}
