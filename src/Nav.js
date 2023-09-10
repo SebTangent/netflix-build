@@ -3,6 +3,7 @@ import './Nav.css';
 
 function Nav() {
   const [show, handleShow] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
@@ -12,41 +13,46 @@ function Nav() {
     }
   };
 
+  const handleResize = () => {
+    setIsSmallScreen(window.innerWidth <= 768);
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', transitionNavBar);
-    return () => window.removeEventListener('scroll', transitionNavBar);
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Check the initial screen width
+    return () => {
+      window.removeEventListener('scroll', transitionNavBar);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
-  
-
-return <div className = "nav">
+  return (
     <div className={`nav ${show && 'nav_background'}`}>
-            <div className = "nav_Contents"> 
+      <div className="nav_Contents">
+        <img
+          className="nav__logo"
+          src="https://fontmeme.com/permalink/230905/d1d84bf33267ba511f7753658033b9ed.png"
+          alt="netflix-font"
+          border="0"
+        />
+        {isSmallScreen ? (
+          // Display the "Discover" dropdown on smaller screens
+          <div className="dropdown-menu">Discover</div>
+        ) : (
+          // Display the regular nav links on larger screens
+          <div className="nav__links">
+            <a href="#">Home</a>
+            <a href="#">TV Shows</a>
+            <a href="#">Movies</a>
+            <a href="#">New & Popular</a>
+            <a href="#">My List</a>
+            <a href="#">Browse by Languages</a>
+          </div>
+        )}
 
-                 <img className="nav__logo" src="https://fontmeme.com/permalink/230905/d1d84bf33267ba511f7753658033b9ed.png" alt="netflix-font" border="0"></img>
-                 <div className="nav__links">
-                    <a href="#">Home</a>
-                    <a href="#">TV Shows</a>
-                    <a href="#">Movies</a>
-                    <a href="#">New & Popular</a>
-                    <a href="#">My List</a>
-                    <a href="#">Browse by Languages</a>
-                  
-                </div>
-        
-                <div className="dropdown-menu">Discover</div>
-                <div className = "dropdown-content">
-                    <a href="#">Home</a>
-                    <a href="#">TV Shows</a>
-                    <a href="#">Movies</a>
-                    <a href="#">New & Popular</a>
-                    <a href="#">My List</a>
-                    <a href="#">Browse by Languages</a>
-                </div>
-
-
-                <div className="nav__right">
-                    <div className="nav__search">
+        <div className="nav__right">
+        <div className="nav__search">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
 
@@ -69,9 +75,8 @@ return <div className = "nav">
                 </div>
             </div>
         </div>
-    </div>
-  </div>
-  
+      </div>
+  );
 }
 
-export default Nav
+export default Nav;

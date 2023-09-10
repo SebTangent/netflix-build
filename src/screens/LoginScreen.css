@@ -44,12 +44,7 @@
     border-radius: 0.4vw;
   }
 
-  @media (max-width: 740px) {
-    .login_sign_in {
-      right: 20px; /* Adjust the left padding for smaller screens */
-    }
-  }
-  
+   
   
   .loginScreenGradient {
     width: 100%;
@@ -80,6 +75,8 @@
     margin-bottom: 20px;
   }
 
+ 
+
 
 .loginScreen-Body > h2 {
     color : #fff;
@@ -96,21 +93,64 @@
 }
 
 .login-Input {
-    margin-top: auto;
+    margin-top: 15px;
+    color: transparent;
 }
 
 .login-Input > form > input{
-    color:rgba(255,255,255);
-    border-radius: 15;
-    outline-width:0;
-    border:none;
+    background-color:transparent;
+    color:#fff;
+    font-size: 18px;
+    border: 1px solid #888; /* Add a 1px grey border */
+    padding: 1.25rem; /* Adjust padding to your liking */
+    border-radius: 20;
+
+
+    padding-right: 8rem;
+    padding-left: 1rem;
+    padding-bottom: .9rem;
+    padding-top: 1rem;
     
     max-width: 600px;
 }
 
-
-.login-Input > login_getStarted{
-    padding : 12px 24px;
-    color: red;
-
+/* Style the input when it's focused */
+.login-Input > form > input:focus {
+    border-color: #888;
+    border-radius: 8px;
 }
+
+
+
+.login_getStarted{
+    margin-left: 5px;
+    cursor: pointer;
+    background-color: rgb(215, 39, 48); ;
+    margin-right: 15px;
+    padding: 15px 40px;
+
+
+    border:none;
+    border-radius: 4px;
+    font-size: 20px;
+    color:#fff;
+    font-weight: 900;
+}
+
+
+@media (max-width: 740px) {
+    .login_sign_in {
+      right: 50px; /* Adjust the left padding for smaller screens */
+    }
+    .loginScreen-Body > h1 {
+        font-size:2rem;
+    }
+    .login_nav__logo{
+        right: 40px
+
+    }
+    .login_getStarted {
+        margin-top: 17px;
+
+    }
+  }

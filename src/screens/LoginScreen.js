@@ -21,7 +21,7 @@ function LoginScreen() {
                 <div className="login-Input">
                 <form>
                     <input type="email" placeholder="Email Address" />
-                    <button className="login_getStarted">Get Started</button>
+                    <button className="login_getStarted">Get Started &gt; </button>
                 </form>
                 </div>
              </div>
