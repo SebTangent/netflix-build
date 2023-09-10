@@ -11,9 +11,10 @@
 .rowPosters {
     display: flex;
     overflow-x: scroll;
-    padding: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
     position: relative;
-    z-index: 1;
+
 }
 
 .rowPosters::-webkit-scrollbar {
@@ -23,7 +24,6 @@
 .posterContainer {
     position: relative;
     display: inline-block;
-    z-index: 2;
     overflow: visible;
 }
 
@@ -35,7 +35,7 @@
     width: auto;
     transition: transform 450ms, opacity 0.3s;
     border-radius: 5px;
-    z-index: 2;
+
 }
 
 .row__posterLarge {
@@ -47,24 +47,24 @@
     transform: scale(1.12);
     border-radius: 9px;
     opacity: 1;
-    z-index: 3;
+
 }
 
 .MovieTitle {
     padding-top: 20px;
+
 }
 
 .previewModal--container {
+    font-size: 10px;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    top: auto;
+    left: auto;
+    width: auto;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    border-radius: 5px;
+
     opacity: 0;
     transition: opacity 0.3s ease, height 0.3s ease;
     z-index: 999999;
@@ -72,10 +72,12 @@
 }
 
 .posterContainer:hover .previewModal--container {
+    
     opacity: 1;
-    pointer-events: auto; /* to enable interaction with this element */
+    pointer-events: all; /* to enable interaction with this element */
 }
 
 .posterContainer:hover {
+    margin-bottom: 20px;
     z-index: 5; /* This ensures that the hovered item is above the other items in terms of stacking order */
 }
