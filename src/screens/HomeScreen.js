@@ -23,7 +23,7 @@ function HomeScreen() {
          <Row 
           title = "Top Rated"
           fetchUrl = {requests.fetchTopRated}
-          isLargeRow
+          
         />
          <Row 
           title = "Action Movies"
@@ -35,15 +35,11 @@ function HomeScreen() {
           fetchUrl = {requests.fetchComedyMovies}
           isLargeRow
         />
-         <Row 
-          title = "Horror Movies"
-          fetchUrl = {requests.fetchHorrorMovies}
-          isLargeRow
-        />
+
          <Row 
           title = "Romance Movies"
           fetchUrl = {requests.fetchRomanceMovies}
-          isLargeRow
+          
         />
          <Row 
           title = "Fantasy Movies"

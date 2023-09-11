@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Nav.css';
+import { Link } from 'react-router-dom';
 
 function Nav() {
   const [show, handleShow] = useState(false);
@@ -42,10 +43,10 @@ function Nav() {
         ) : (
           // Display the regular nav links on larger screens
           <div className="nav__links">
-            <a href="#">Home</a>
-            <a href="#">TV Shows</a>
-            <a href="#">Movies</a>
-            <a href="#">New & Popular</a>
+            <Link to = "/" >Home</Link>
+            <Link to="/TVShows">TV Shows</Link>
+            <Link to = "/Movies">Movies</Link>
+            <Link to = "/New&Popular">New & Popular</Link>
             <a href="#">My List</a>
             <a href="#">Browse by Languages</a>
           </div>
