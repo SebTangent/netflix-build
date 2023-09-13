@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Row.css';
 import axios from './axios';
 
-function Row({ title, fetchUrl, isLargeRow = false }) {
+function Row({ title, fetchUrl, isLargeRow = false ,addToMyList}) {
   const [movies, setMovies] = useState([]);
   const [hoveredMovie, setHoveredMovie] = useState(null);
 
@@ -39,7 +39,10 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                 <button className = "PlayButton">
                     <i className="fa fa-play"></i>
                 </button>
-                <button className = "addtolist"> +</button>
+                <button 
+                className = "addtolist"
+                onClick={() => addToMyList(movie)}
+                > +</button>
               </div>
             </div>
             )}

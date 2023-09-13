@@ -1,5 +1,6 @@
 * {
     font-family: Arial, sans-serif;
+  
   }
   
   .container {
@@ -66,6 +67,7 @@
     z-index: 1;
     text-align: center;
     padding: 20px;
+    left:0;
   }
   
   .loginScreen-Body > h1 {
@@ -98,8 +100,8 @@
 }
 
 .login-Input > form > input{
-    background-color:transparent;
-    color:#fff;
+    background-color:light transparent;
+    color:black;
     font-size: 18px;
     border: 1px solid #888; /* Add a 1px grey border */
     padding: 1.25rem; /* Adjust padding to your liking */

@@ -47,7 +47,7 @@ function Nav() {
             <Link to="/TVShows">TV Shows</Link>
             <Link to = "/Movies">Movies</Link>
             <Link to = "/New&Popular">New & Popular</Link>
-            <a href="#">My List</a>
+            <Link to = "/MyList">My List</Link>
             <a href="#">Browse by Languages</a>
           </div>
         )}
