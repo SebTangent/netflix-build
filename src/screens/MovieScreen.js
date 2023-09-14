@@ -1,7 +1,7 @@
 import React from 'react'
 import "./MovieScreen.css"
 import Nav from "../Nav.js";
-import Banner from "../Banner.js";
+import Banner from "../MovieBanner.js";
 import Row from "../Row.js";
 import requests from "../requests";
 

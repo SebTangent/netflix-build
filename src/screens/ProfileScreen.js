@@ -1,15 +1,35 @@
-import React from 'react'
-import "./ProfileScreen.css"
-import Nav from "../Nav"
+import React from 'react';
+import "./ProfileScreen.css";
+import { useSelector } from "react-redux";
+import { auth } from "./firebase1"
+import { selectUser } from "../features/counter/userSlice";
 
-function login() {
+import Nav from "../Nav";
+
+function ProfileScreen() {
+  const user = useSelector(selectUser);
+
   return (
+    <div className="profileScreen"> 
+      <Nav />
+      <div className="profile-screen__body">
+        <h1>Edit Profile</h1>
+        <div className="profileScreen__info">
+          <img src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg" alt="" />
+          <div className="profileScreen__details">
 
-    <div className = "login"> 
-    <Nav />
-    
+            <h2>{user.email}</h2>
+            <div className = "profileScreen__plans">
+              <h3>Plans</h3>
+
+              <button onClick = {() => auth.signOut()}
+              className = "profielScreen__logout">Sign out</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default login
+export default ProfileScreen;

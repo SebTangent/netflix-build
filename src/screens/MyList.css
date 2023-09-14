@@ -1,0 +1,48 @@
+/* Existing styles */
+.ListPage {
+    height: 100vh;
+    color: white;
+  }
+  
+  .ListName > h1 {
+    padding-bottom: 10px;
+  }
+  
+  .ListName {
+    padding-top: 75px;
+    padding-left: 50px;
+    font-weight: 1;
+    border-bottom: 1px solid #282c2d; 
+  }
+  
+  /* New, uniquely-named styles */
+  .myListRowPosters {
+    display: flex;
+    overflow-x: scroll;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .myListRowPosters::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .myListPosterContainer {
+    margin-right: 20px;
+  }
+  
+  .myListRow__poster {
+    object-fit: contain;
+    height: 200px;
+    transition: transform 450ms, opacity 0.3s;
+    border-radius: 5px;
+  }
+  
+  .myListRow__poster:hover {
+    transform: scale(1.12);
+    border-radius: 9px;
+    opacity: 1;
+  }
+  

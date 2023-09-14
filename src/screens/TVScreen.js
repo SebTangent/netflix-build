@@ -1,7 +1,7 @@
 import React from 'react';
 import "./TVScreen.css";
 import Nav from "../Nav.js";
-import Banner from "../Banner.js";
+import Banner from "../TvBanner.js";
 import Row from "../Row.js";
 import requests from "../requests";
 

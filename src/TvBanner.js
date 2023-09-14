@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "./Banner.css";
+import "./TvBanner.css";
 import axios from './axios';
 import requests from './requests'
 import 'font-awesome/css/font-awesome.min.css';
@@ -10,7 +10,7 @@ function Banner() {
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(requests.fetchTrending);
+            const request = await axios.get(requests.fetchAnimationTV);
             setMovie(
                 request.data.results[
                     Math.floor(Math.random() * request.data.results.length - 1)
