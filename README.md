@@ -17,6 +17,7 @@ Sebflix is a Netflix clone created with React, Stripe, and Cloudflare.
 ### Coding Languages / APIs / Etc
 
 - Node.js
+- Redux
 - TMBD API
 - Stripe 
 - Cloudflare
