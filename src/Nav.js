@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import './Nav.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 function Nav() {
   const [show, handleShow] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const history = useNavigate();
+  
 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
@@ -33,6 +35,7 @@ function Nav() {
       <div className="nav_Contents">
         <img
           className="nav__logo"
+          onClick={() => history("/")}
           src="https://fontmeme.com/permalink/230905/d1d84bf33267ba511f7753658033b9ed.png"
           alt="netflix-font"
           border="0"
@@ -65,7 +68,8 @@ function Nav() {
                     <i class="fa fa-bell-o" aria-hidden="true"></i>
                 </div>
 
-                <div className="nav__avatar">
+                <div className="nav__avatar"  onClick={() => history("/Profile")} >
+
                    <img
                     className="user_logo"
                     src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg"
