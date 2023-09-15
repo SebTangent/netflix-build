@@ -5,7 +5,7 @@ import Banner from "../Banner.js";
 import Row from "../Row.js";
 import requests from "../requests";
 
-function NewAndPop() {
+function NewAndPop({myList, addToMyList}) {
   return (
     <div className='NewAndPop'>
      <Nav />
@@ -13,10 +13,12 @@ function NewAndPop() {
      <Row 
           title = "Trending"
           fetchUrl = {requests.fetchTrending}
+          myList={myList} addToMyList={addToMyList}
         /> 
      <Row 
           title = "Top Rated"
           fetchUrl = {requests.fetchTopRated}
+          myList={myList} addToMyList={addToMyList}
           />
         
 

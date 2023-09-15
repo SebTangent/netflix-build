@@ -17,6 +17,7 @@
     cursor: pointer;
     border: none;
     min-width: 100px; /* Add a min-width to keep the button size consistent */
+    height:40px;
 }
 
 /* Add a media query for smaller screens */

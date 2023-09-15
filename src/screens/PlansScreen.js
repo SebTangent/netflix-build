@@ -12,19 +12,22 @@ function PlansScreen() {
 
     useEffect(() => {
         const fetchData = async () => {
-            console.log("Fetching data...");
             const productsCollection = collection(db, 'products');
             const q = query(productsCollection, where('active', '==', true));
             const querySnapshot = await getDocs(q);
             const fetchedProducts = {};
             
-            console.log("Query Snapshot:", querySnapshot);
+            for (const doc of querySnapshot.docs) {
+                const docData = doc.data();
+                const priceCollection = collection(db, 'products', doc.id, 'prices');
+                const priceSnapshot = await getDocs(priceCollection);
+                
+                const priceData = priceSnapshot.docs[0]?.data();
+                const priceId = priceSnapshot.docs[0]?.id;
 
-            querySnapshot.forEach((doc) => {
-                fetchedProducts[doc.id] = doc.data();
-            });
+                fetchedProducts[doc.id] = { ...docData, priceId };
+            }
 
-            console.log("Fetched Products:", fetchedProducts);
             setProducts(fetchedProducts);
         };
 
@@ -32,23 +35,13 @@ function PlansScreen() {
     }, []);
 
     const loadCheckout = async (priceId) => {
-        console.log("Clicked Subscribe with priceId:", priceId);
-
-        if (!priceId) {
-            console.error("Price ID is undefined");
-            return;
-        }
-
         const docRef = await addDoc(collection(db, 'customers', user.uid, 'checkout_sessions'), {
             price: priceId,
             success_url: window.location.origin,
             cancel_url: window.location.origin,
         });
 
-        console.log("Firebase docRef:", docRef);
-
         const unsubscribe = onSnapshot(docRef, async (snap) => {
-            console.log("Snapshot data:", snap.data());
             const { error, sessionId } = snap.data();
 
             if (error) {
@@ -56,21 +49,23 @@ function PlansScreen() {
             }
 
             if (sessionId) {
-                console.log("Got sessionId:", sessionId);
                 const stripe = await loadStripe("pk_test_51NqJAYEj2VfcTVgYZuTga0HMg0FLFCs3NKUXihLJeV2aR18WgWcHxGulpExstmYX1tAKi42yaQoVw87Q5DLp43Ee00WaUiPEw8");
                 stripe.redirectToCheckout({ sessionId });
             }
         });
 
-        return () => unsubscribe(); // Cleanup
+        return () => unsubscribe();
     };
 
     return (
         <div className="PlansScreen">
             {Object.entries(products).map(([productId, productData]) => {
                 const handleSubscriptionClick = () => {
-                    const priceId = productData?.prices?.priceId;
-                    console.log('priceId:', priceId);
+                    const priceId = productData?.priceId;
+                    if (!priceId) {
+                        console.error("Price ID is undefined. Product data is:", productData);
+                        return;
+                    }
                     loadCheckout(priceId);
                 };
     
@@ -86,7 +81,6 @@ function PlansScreen() {
             })}
         </div>
     );
-    
 }
 
 export default PlansScreen;
