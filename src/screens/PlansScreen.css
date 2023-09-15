@@ -1,0 +1,27 @@
+.plansScreen__plan{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0.8;
+}
+.plansScreen__plan:hover{
+    opacity: 1;
+}
+
+.plansScreen__plan > button {
+    padding: 10px 20px;
+    color: white;
+    font-weight: 600;
+    background-color: #e50914;
+    margin-left: 20px;
+    cursor: pointer;
+    border: none;
+    min-width: 100px; /* Add a min-width to keep the button size consistent */
+}
+
+/* Add a media query for smaller screens */
+@media (max-width: 1125px) {
+    .plansScreen_info h6 {
+        display: none;  /* Hide the description on small screens */
+    }
+}
